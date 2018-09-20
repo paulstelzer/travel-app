@@ -1,0 +1,8 @@
+<agm-map [zoom]="zoom" [mapDraggable]="false" [scrollwheel]="false" [zoomControl]="false" [streetViewControl]="false" [disableDefaultUI]="true"
+  [latitude]="center.lat" [longitude]="center.lng">
+
+  <agm-polyline *ngIf="polypoints">
+      <agm-polyline-point *ngFor="let p of polypoints" [latitude]="p.coordinate.lat" [longitude]="p.coordinate.lng"></agm-polyline-point>
+    </agm-polyline>
+  <agm-circle *ngFor="let p of polypoints" [latitude]="p.coordinate.lat" [longitude]="p.coordinate.lng" [radius]="1/zoom * 300000" [fillOpacity]="1" fillColor="#9C27B0"></agm-circle>
+</agm-map>

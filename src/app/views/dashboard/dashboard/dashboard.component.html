@@ -1,0 +1,71 @@
+<div fxLayout="row wrap" fxLayoutAlign="center">
+  <ng-container *ngIf="(status$ | async) as s">
+    <ng-container *ngIf="s.routeData; else noRouteData">
+      <ng-container *ngIf="routes$ | async as routes">
+        <mat-card *ngFor="let r of routes" [routerLink]="'/routes/'+r.id" class="mat-card-background height-300 cursor-pointer" fxFlex="100" fxFlex.gt-sm="50"
+          [@animate]="{value:'*',params:{scale:'.4',delay:'500ms'}}">
+          <!-- <img *ngIf="r.picture?.path" mat-card-image [src]="imageUrl + r.picture.path"> -->
+          <im-img-loader *ngIf="r.picture?.path" class="routes-image" backgroundSize="cover" [src]="imageUrl + r.picture.path"></im-img-loader>
+          <mat-card-content>
+            <div fxLayout="row wrap" fxLayoutAlign="space-between center">
+              <div>
+                <h3>{{r.title}}</h3>
+              </div>
+              <div>
+                <button color="white" mat-button>{{"ROUTE.SEE"| translate}}</button>
+              </div>
+            </div>
+          </mat-card-content>
+          <mat-card-actions>
+
+          </mat-card-actions>
+        </mat-card>
+      </ng-container>
+    </ng-container>
+
+    <ng-template #noRouteData>
+      <mat-card *ngIf="s.routeCreated" fxFlex="100" fxFlex.gt-sm="50" [@animate]="{value:'*',params:{scale:'.4',delay:'300ms'}}">
+        <mat-card-title>
+        </mat-card-title>
+        <mat-card-content>
+          <div class="text-center">
+            <div [innerHTML]="'DASHBOARD.NO_ROUTE.TEXT_TOP' | translate"></div>
+
+            <button class="mat-button-blue mb-1" mat-raised-button (click)="openFacebook()">
+              <fa-icon [icon]="faFacebook"></fa-icon>
+              {{"DASHBOARD.NO_ROUTE.BUTTON_FACEBOOK" | translate}}
+            </button>
+
+            <div [innerHTML]="'DASHBOARD.NO_ROUTE.TEXT_BOTTOM' | translate"></div>
+
+            <button class="mat-orange mb-1" color="accent" mat-raised-button (click)="openSurvey()">
+              <fa-icon [icon]="faAngleRight"></fa-icon>
+              {{"DASHBOARD.NO_ROUTE.BUTTON_SURVEY" | translate}}
+            </button>
+
+            <div [innerHTML]="'DASHBOARD.NO_ROUTE.TEXT_FINAL' | translate"></div>
+
+          </div>
+        </mat-card-content>
+      </mat-card>
+
+      <mat-card [routerLink]="'/new'" *ngIf="!s.routeCreated" class="mat-card-background" fxFlex="100" fxFlex.gt-sm="50" [@animate]="{value:'*',params:{scale:'.4',delay:'300ms'}}">
+        <img mat-card-image src="assets/img/background/start.jpg">
+
+        <mat-card-content>
+          <div fxLayout="row wrap" fxLayoutAlign="space-between center">
+            <div>
+              <h3>{{"DASHBOARD.NO_CREATE.TITLE" | translate}}</h3>
+            </div>
+            <div>
+              <button color="primary" mat-raised-button>{{"DASHBOARD.NO_CREATE.BUTTON" | translate}}</button>
+            </div>
+          </div>
+        </mat-card-content>
+        <mat-card-actions>
+
+        </mat-card-actions>
+      </mat-card>
+    </ng-template>
+  </ng-container>
+</div>

@@ -1,0 +1,105 @@
+<mat-tab-group #group class="route-tab-group" (selectedIndexChange)="selectedIndexChange($event)" [ngClass]="{'invisible-tabs': submitted || (currentStep>=2 && currentStep<11)}">
+
+  <!-- Tab Info Text -->
+  <mat-tab [label]="'NEW_ROUTE.EXPLANATION.TITLE' | translate">
+    <div class="page-wrap height-100 tab-background image-slider0">
+      <div class="route-form-hold" [@animate]="{value:'*',params:{scale:'.9',delay:'300ms'}}">
+        <mat-card class="card-dark-transparent">
+          <mat-card-title>
+            {{"NEW_ROUTE.EXPLANATION.TITLE" | translate}}
+          </mat-card-title>
+          <mat-card-content>
+            <ng-container *ngIf="(user$ | async) as u">
+
+              <div class="text-content pb-1" item-content [innerHTML]="'NEW_ROUTE.EXPLANATION.DESCRIPTION' | translate">
+              </div>
+              <button mat-raised-button class="mat-primary full-width" (click)="next()">
+                {{"NEW_ROUTE.NEXT" | translate}}
+              </button>
+            </ng-container>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+  </mat-tab>
+  <!-- Tab Info Text -->
+
+  <!-- Tab Where you come from -->
+  <mat-tab [label]="'NEW_ROUTE.MAP.START' | translate" [disabled]="maxStep<1">
+    <div class="page-wrap height-100 tab-background image-slider1">
+      <div class="route-form-hold">
+        <mat-card class="card-dark-transparent animated fadeInDown">
+          <mat-card-title>
+            {{"NEW_ROUTE.MAP.START" | translate}}
+          </mat-card-title>
+          <mat-card-content>
+            <app-new-route-country (sendAddress)="setAddress($event)" (nextStep)="next()"></app-new-route-country>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+  </mat-tab>
+  <!-- Tab Where you come from -->
+
+  <!-- Tab End Registration -->
+  <mat-tab [label]="'NEW_ROUTE.END.TITLE' | translate" [disabled]="maxStep<2">
+    <div class="page-wrap height-100 tab-background image-slider3">
+      <div class="route-form-hold">
+        <mat-progress-bar mode="determinate" class="session-progress"></mat-progress-bar>
+        <mat-card class="card-small-transparent text-left final-screen">
+          <mat-card-title>
+            {{"NEW_ROUTE.END.TITLE" | translate}}
+          </mat-card-title>
+          <mat-card-content>
+            <p>{{"NEW_ROUTE.END.DESCRIPTION" | translate}}</p>
+            <ng-container *ngIf="(user$ | async) as u">
+              <ng-container *ngIf="u.isAnonymous">
+                <h3>{{"NEW_ROUTE.REGISTER.TITLE" | translate}}</h3>
+                <form (ngSubmit)="saveAccount()">
+                  <mat-form-field class="full-width field-icon">
+                    <mat-icon matPrefix>person</mat-icon>
+                    <input matInput #input [placeholder]="'NEW_ROUTE.USERNAME.TITLE' | translate" value="" name="name"
+                      [(ngModel)]="registerCredentials.name">
+                  </mat-form-field>
+
+                  <mat-form-field class="full-width field-icon">
+                    <mat-icon matPrefix>mail</mat-icon>
+                    <input matInput autocomplete="off" autocorrect="off" autocapitalize="off" type="email" name="email"
+                      [placeholder]="'LOGIN.EMAIL.PLACEHOLDER' | translate" [(ngModel)]="registerCredentials.email">
+                  </mat-form-field>
+
+                  <mat-form-field class="full-width field-icon">
+                    <mat-icon matPrefix>lock</mat-icon>
+                    <input matInput type="password" name="password" [placeholder]="'LOGIN.PASSWORD.PLACEHOLDER' | translate"
+                      [(ngModel)]="registerCredentials.password">
+                  </mat-form-field>
+
+                  <button mat-raised-button color="primary" class="full-width mb-1" type="submit" [disabled]="buttonsDisabled">
+                    {{'NEW_ROUTE.REGISTER.SAVE_SUBMIT' | translate}}
+                  </button>
+                </form>
+
+                <p>{{"NEW_ROUTE.REGISTER.NO_ACCOUNT_DESCRIPTION" | translate}}</p>
+
+                <button mat-raised-button color="accent" class="full-width" (click)="noAccount()" [disabled]="buttonsDisabled">
+                  {{'NEW_ROUTE.REGISTER.NO_ACCOUNT' | translate}}
+                </button>
+
+              </ng-container>
+              <ng-container *ngIf="!u.isAnonymous">
+                <button mat-raised-button color="primary" class="full-width" (click)="end()">
+                  {{'NEW_ROUTE.END.SAVE_SUBMIT' | translate}}
+                </button>
+              </ng-container>
+            </ng-container>
+
+
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+  </mat-tab>
+  <!-- Tab End Registration -->
+
+
+</mat-tab-group>

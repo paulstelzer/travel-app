@@ -1,0 +1,6 @@
+.text-white {
+    input,
+    ::ng-deep .mat-form-field-label {
+        color: #fff !important;
+    }
+}

@@ -1,0 +1,60 @@
+<div fxLayout="row wrap">
+  <div fxFlex="100" fxFlex.gt-sm="25" fxFlex.sm="50" [@animate]="{value:'*',params:{scale:'.9',delay:'30ms'}}">
+    <mat-card>
+      <mat-card-title fxLayoutAlign="start center">
+        <small class="text-muted">Budget</small>
+        <span fxFlex></span>
+        <mat-chip class="icon-chip" color="primary" selected="true">
+          <mat-icon>trending_up</mat-icon>20%</mat-chip>
+      </mat-card-title>
+      <mat-card-content>
+        <h3 class="m-0 font-normal">1,450</h3>
+        <small class="text-muted">USD</small>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <div fxFlex="100" fxFlex.gt-sm="25" fxFlex.sm="50" [@animate]="{value:'*',params:{delay:'400ms',scale:'.2'}}">
+    <mat-card>
+      <mat-card-title fxLayoutAlign="start center">
+        <small class="text-muted">Duration</small>
+        <span fxFlex></span>
+        <mat-chip class="icon-chip" color="accent" selected="true">
+          <mat-icon>trending_up</mat-icon>10%</mat-chip>
+      </mat-card-title>
+      <mat-card-content>
+        <h3 class="m-0 font-normal">2</h3>
+        <small class="text-muted">weeks</small>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <div fxFlex="100" fxFlex.gt-sm="25" fxFlex.sm="50" [@animate]="{value:'*',params:{delay:'800ms',scale:'.6'}}">
+    <mat-card>
+      <mat-card-title fxLayoutAlign="start center">
+        <small class="text-muted">Fun Factor</small>
+        <span fxFlex></span>
+        <mat-chip class="icon-chip" color="accent" selected="true">
+          <mat-icon>trending_up</mat-icon>9%</mat-chip>
+      </mat-card-title>
+      <mat-card-content>
+        <h3 class="m-0 font-normal">7</h3>
+        <small class="text-muted">out of 10</small>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <div fxFlex="100" fxFlex.gt-sm="25" fxFlex.sm="50" [@animate]="{value:'*',params:{delay:'1200ms',scale:'.4'}}">
+    <mat-card>
+      <mat-card-title fxLayoutAlign="start center">
+        <small class="text-muted">Kilometer</small>
+        <span fxFlex></span>
+        <mat-chip class="icon-chip" color="warn" selected="true">
+          <mat-icon>trending_down</mat-icon>2%</mat-chip>
+      </mat-card-title>
+      <mat-card-content>
+        <h3 class="m-0 font-normal">50</h3>
+        <small class="text-muted">daily</small>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

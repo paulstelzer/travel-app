@@ -1,0 +1,172 @@
+.route-form-hold {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: center;
+    &.max-width-600 {
+        max-width: 600px;
+    }
+}
+
+.invisible-tabs ::ng-deep .mat-tab-header {
+    visibility: hidden !important;
+    z-index: -1;
+}
+
+::ng-deep .mat-tab-header {
+    z-index: 10;
+    background: rgba(255, 255, 255, 0.48);
+}
+
+::ng-deep .mat-tab-body-wrapper {
+    margin-top: -49px;
+}
+
+.card-dark-transparent {
+    background: rgba(0, 0, 0, .5);
+    box-shadow: 0 0 37px 1px rgba(0, 0, 0, .75);
+    color: #fff;
+    mat-card-title {
+        font-size: 1.7rem !important;
+        font-weight: 700;
+    }
+}
+
+.card-light-transparent {
+    background: rgba(255, 255, 255, .5);
+    box-shadow: 0 0 37px 1px rgba(0, 0, 0, .75);
+    mat-card-title {
+        font-size: 1.7rem !important;
+        font-weight: 700;
+    }
+}
+
+.page-wrap {
+    padding-top: 60px;
+}
+
+.image-decide {
+    overflow: hidden;
+    height: 100vh;
+    .image-question {
+        width: 100%;
+        z-index: 1;
+        @media (min-width: 900px) {
+            position: relative;
+        }
+        @media (max-width: 899px) {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            opacity: 0.9
+        }
+        h1 {
+            @media (min-width: 900px) {
+                width: 100%;
+                /*padding: 62px 0 15px;*/
+            }
+            font-size: 1.4rem;
+            margin: 0 auto;
+            padding: 15px 0;
+            width:100%;
+            text-align: center;
+            background: #933;
+            color: #fff;
+        }
+    }
+    .images-wrap {
+        @media (max-width: 899px) {
+            flex-flow:column;
+        }
+        display: flex;
+        align-items: center;
+    }
+    .row {
+        width: 100%;
+        @media (max-width: 899px) {
+            height: 50vh;
+        }
+        height: 100vh;
+    }
+    .col {
+        background-position: center;
+        background-size: cover;
+        height: 100%;
+        width: 100%;
+        cursor: pointer;
+    }
+}
+
+.travel-app-radio-group {
+    &.one-third {
+        display: flex;
+        flex-wrap: wrap;
+        .travel-app-radio-button {
+            width: 50%;
+        }
+    }
+    .travel-app-radio-button {
+        padding: 15px 0;
+        font-size: 1.1rem;
+        display: block;
+        &.mat-radio-checked {
+            color: #933;
+        }
+        ::ng-deep .mat-radio-container {
+            display: none;
+        }
+        ::ng-deep .mat-radio-label {
+            width: 100%;
+            text-align: center;
+            display: block;
+        }
+    }
+}
+
+.travel-app-section {
+    text-align: left;
+    .travel-app-checkbox {
+        margin-bottom: 15px;
+        display: block;
+        h3 {
+            font-size: 1.2rem;
+            margin: 0;
+        }
+        p {
+            color: #696969;
+            white-space: normal;
+            margin: 0;
+        }
+    }
+}
+
+.travel-app-wanttoknow {
+    .mat-card-subtitle {
+        text-align: left;
+    }
+    ::ng-deep .mat-checkbox-layout {
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        width: 100%;
+    }
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-white {
+    input,
+    ::ng-deep .mat-form-field-label {
+        color: #fff !important;
+    }
+}
+
+.final-screen {
+    mat-card-title {
+        font-size: 1.4rem !important;
+    }
+    h3 {
+        font-size: 1.2rem;
+    }
+}

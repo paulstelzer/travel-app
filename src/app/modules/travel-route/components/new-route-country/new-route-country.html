@@ -1,0 +1,11 @@
+<form (ngSubmit)="next()">
+<mat-form-field class="full-width field-icon text-white">
+  <mat-icon matPrefix>search</mat-icon>
+  <input #inputSearch name="inputsearch" matInput [placeholder]="'NEW_ROUTE.MAP.SEARCH' | translate" name="location" value="">
+
+</mat-form-field>
+<button #submitButton mat-raised-button class="mat-primary full-width" type="submit">
+  {{"NEW_ROUTE.NEXT" | translate}}
+</button>
+
+</form>

@@ -1,0 +1,35 @@
+<mat-tab-group *ngIf="travelRoute">
+  <mat-tab *ngFor="let r of travelRoute.route; let index = index;" [label]="r.title">
+
+    <mapbox-map [data]="travelRoute.route[index]" (tapped)="tapped($event)"></mapbox-map>
+
+    <mat-card class="p-0">
+      <mat-card-content class="mt-1">
+        <h3>{{r.title}}</h3>
+        <div class="card-content" [innerHTML]="r.description"></div>
+      </mat-card-content>
+    </mat-card>
+
+    <div fxLayout="row wrap">
+      <div fxLayout="row" fxFlex="100" fxFlex.gt-md="50" *ngFor="let l of travelRoute.route[index].locations">
+        <mat-card class="mat-card-background height-300" [@animate]="{value:'*',params:{scale:'.4',delay:'500ms'}}">
+          <!-- <img *ngIf="l.picture?.path" mat-card-image [src]="imageUrl + l.picture.path"> -->
+
+          <im-img-loader *ngIf="l.picture?.path" class="routes-image" backgroundSize="cover" [src]="imageUrl + l.picture.path"></im-img-loader>
+          <mat-card-content>
+            <div fxLayout="row wrap" fxLayoutAlign="space-between center">
+              <div>
+                <h3>{{l.title}}</h3>
+              </div>
+              <div>
+                <button color="white" mat-button>{{"ROUTE.SINGLE.ACTIVITIES"| translate}}</button>
+              </div>
+            </div>
+          </mat-card-content>
+        </mat-card>
+
+      </div>
+    </div>
+
+  </mat-tab>
+</mat-tab-group>

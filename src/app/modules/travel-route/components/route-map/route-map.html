@@ -1,0 +1,14 @@
+<agm-map [zoom]="4" [streetViewControl]="false" [disableDefaultUI]="true" [latitude]="center.lat" [longitude]="center.lng">
+  <agm-polyline *ngIf="polypoints">
+    <agm-polyline-point *ngFor="let p of polypoints" [latitude]="p.coordinate.lat" [longitude]="p.coordinate.lng"></agm-polyline-point>
+  </agm-polyline>
+
+  <agm-marker agm-map *ngFor="let p of polypoints" [latitude]="p.coordinate.lat" [longitude]="p.coordinate.lng">
+    <agm-info-window>
+      <p><strong>{{p.title}}</strong></p>
+      <button mat-raised-button color="primary" (click)="markerClicked(p._id)">
+        {{"ROUTE.OPEN"| translate}}
+      </button>
+    </agm-info-window>
+  </agm-marker>
+</agm-map>

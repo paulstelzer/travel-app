@@ -1,0 +1,24 @@
+<div class="page-wrap height-100 fullscreen-start-background">
+  <div class="session-form-hold" [@animate]="{value:'*',params:{scale:'.9',delay:'300ms'}}">
+    <mat-progress-bar mode="determinate" class="session-progress"></mat-progress-bar>
+    <mat-card class="card-transparent-50">
+      <mat-card-content>
+        <div class="text-center pb-1">
+          <img src="assets/img/logo/logo.png" alt="" class="mb-05 full-width">
+
+          <mat-checkbox #acceptCheckbox name="agreed" class="pb-1 pt-1" color="primary">
+            {{"START.CHECKBOX.TEXT" | translate}}
+            <a mat-button [routerLink]="'/company/privacy'" color="primary">{{"START.CHECKBOX.LINK" | translate}}</a>
+          </mat-checkbox>
+          
+          <button #submitButton (click)="signIn()" mat-raised-button class="mat-primary full-width mb-1 btn-large">{{"START.TITLE" | translate}}</button>
+        </div>
+
+        <div>
+          <button mat-button [routerLink]="'/auth/login'" class="mat-primary text-center full-width btn-wrap">{{"START.HAVE_ACCOUNT" | translate}}</button>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
+<app-legal-footer></app-legal-footer>

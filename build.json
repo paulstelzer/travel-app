@@ -1,0 +1,19 @@
+{
+  "android": {
+    "release": {
+      "keystore": "./keystore.jks",
+      "storePassword": "k!eKi9VWz7jWw^&H%8Z56",
+      "alias": "inno1",
+      "password": "34uQ!GBbU6c@a9j!RX7YM",
+      "keystoreType": ""
+  }
+  },
+  "ios": {
+    "debug": {
+      "developmentTeam": "79MZU6TV5Y"
+    },
+    "release": {
+      "developmentTeam": "79MZU6TV5Y"
+    }
+  }
+}

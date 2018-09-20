@@ -1,0 +1,22 @@
+<app-back-button></app-back-button>
+<div class="page-wrap height-100 fullscreen-start-background">
+    <div class="session-form-hold" [@animate]="{value:'*',params:{scale:'.9',delay:'300ms'}}">
+        <mat-card class="card-transparent-80">
+            <mat-card-content>
+                <div class="text-center pb-1">
+                    <img src="assets/img/logo/logo.png" alt="" class="mb-05">
+
+
+                    <h3>{{"MENU.CONTACT" | translate}}</h3>
+                    <p [innerHTML]="'IMPRINT.TEXT' | translate"></p>
+
+
+                    <h3>{{"MENU.IMPRINT" | translate}}</h3>
+                    <div [innerHTML]="'IMPRINT.DETAILS' | translate"></div>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </div>
+
+</div>
+<app-legal-footer></app-legal-footer>

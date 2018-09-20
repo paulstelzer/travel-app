@@ -1,0 +1,148 @@
+{
+	"LOGIN": {
+		"TITLE": "Sign in to your account",
+		"EMAIL": {
+			"PLACEHOLDER": "Email",
+			"ERROR": "Please enter a correct Email"
+		},
+		"PASSWORD": {
+			"PLACEHOLDER": "Password",
+			"ERROR": "Password is required"
+		},
+		"SUBMIT": "Sign in",
+		"FORGOT_PASSWORD": {
+			"TITLE": "Forgot your password?",
+			"SUBMIT": "Submit"
+		},
+		"CREATE_NEW": "Create a new account!"
+	},
+	"START": {
+		"TITLE": "Start your Travel",
+		"CHECKBOX": {
+			"TEXT": "I have read and agree to the",
+			"LINK": "privacy policy",
+			"ERROR": "Please agree to the privacy policy!"
+		},
+		"HAVE_ACCOUNT": "Already have an account? Sign in!"
+	},
+	"DASHBOARD": {
+		"NO_CREATE": {
+			"TITLE": "Start your next travel!",
+			"BUTTON": "Tap here!"
+		}
+	},
+	"FIREBASE": {
+		"ACTION": {
+			"START": "Back to the Start",
+			"VERIFY_EMAIL": {
+				"TITLE": "Verify your Email...",
+				"SUCCESS": "Your Email was verified successfully!",
+				"ERROR": "We could not verify your Email!"
+			},
+			"RECOVER_EMAIL": {
+				"TITLE": "Recover your Email...",
+				"SUCCESS": "We have recovered your Email successfully!",
+				"ERROR": "We could not recover your Email!"
+			},
+			"RESET_PASSWORD": {
+				"TITLE": "Reset your password",
+				"BUTTON": "Reset password",
+				"SUCCESS": "Your password was changed successfully!",
+				"ERROR": "Your password could not changed!"
+			}
+		},
+		"ERROR": {
+			"DEFAULT": "Something went wrong - Please try again later",
+			"INVALID": "Your Email or Password was invalid",
+			"NOT_FOUND": "We could not found this user account!",
+			"IN_USE": "This login credentials are already in use",
+			"INVALID_EMAIL": "Please enter a valid Email Address!",
+			"NOT_SAVED": "Your data was not saved, please try again later",
+			"DISABLED": "Your account was blocked, please contact support@example.com ",
+			"WEAK_PASSWORD": "The password has to be at least 6 characters!",
+			"NETWORK": "We could not connect to the internet!",
+			"SIGNUP": "We could not create your account!",
+			"QUOTA": "We have not enough space to place the data for this app!",
+			"RECENT_LOGIN": "Your last login is too far away. Please logout and login again!",
+			"NO_NEW_POSITION": "Your position has not changed",
+			"INVALID_CODE": "The code to verfigy your Email is wrong or you have already verified your Email!"
+		},
+		"SUCCESS": {
+			"USER_SAVING": "Your account details will be saved",
+			"USER_SAVED": "Your account details are saved successfully",
+			"USER_DELETED": "Your account was deleted successfully",
+			"MAIL_SAVED": "Your account was successfully saved with your Email!",
+			"MAIL_NEW": "We have changed your Email-Address and send you a confirmation link!",
+			"MAIL_VERIFICATION": "We send you an Email to verfiy your Email-Address!",
+			"MAIL_VERIFIED": "Your verified your Email successfully!",
+			"MAIL_RECOVERED": "Your Email has been recovered successfully!",
+			"MAIL_RESET_PASSWORD": "We send you an Email to reset your password!",
+			"SMS_SEND": "We have send you a SMS with the verification code",
+			"LOGIN_SUCCESFUL": "Login successful",
+			"PASSWORD_CHANGED": "Your password has changed successfully!"
+		}
+	},
+	"OPEN": "Open",
+	"MENU": {
+		"START": "Start",
+		"DASHBOARD": "Dashboard",
+		"ROUTES": "Routes",
+		"SETTINGS": "Settings",
+		"PRIVACY": "Privacy",
+		"CONTACT": "Contact",
+		"IMPRINT": "Imprint"
+	},
+	"IMPRINT": {
+		"TEXT": "Contact us via Email: contact@example.com",
+		"SENDMAIL": "Send Message",
+		"DETAILS": "<p>Imprint here</p>"
+	},
+	"NOTIFICATIONS": {
+		"TITLE": "Notifications",
+		"CLEAR": "Clear all notifications",
+		"NO": "There are currently no notifications!"
+	},
+	"ROUTE": {
+		"SEE": "See route",
+		"OPEN": "Open",
+		"TABS": {
+			"OVERVIEW": "Overview",
+			"ROUTES": "Routes",
+			"INFO": "Info"
+		},
+		"SINGLE": {
+			"ACTIVITIES": "See activities"
+		}
+	},
+	"TOAST": {
+		"OKAY": "Okay"
+	},
+	"NEW_ROUTE": {
+		"EXPLANATION": {
+			"TITLE": "My Travel",
+			"DESCRIPTION": "Start your next travel step by step!"
+		},
+		"NEXT": "Next",
+		"REGISTER": {
+			"TITLE": "Register now for free!",
+			"SAVE_SUBMIT": "Create My Account",
+			"NO_ACCOUNT": "I do not want to create an account!",
+			"NO_ACCOUNT_DESCRIPTION": "If you don't create an account you cannot access your travel on another device."
+		},
+		"USERNAME": {
+			"TITLE": "Your name"
+		},
+		"END": {
+			"TITLE": "What's next?",
+			"DESCRIPTION": "You can now create your next travel!"
+		},
+		"MAP": {
+			"START": "Where do you come from?",
+			"END": "Where do you want to travel?",
+			"NOT_AVAILABLE": "Sorry, not available",
+			"SEARCH": "Search for your location",
+			"YOUR": "Your choosen location",
+			"ERROR": "Please select a location from dropdown after type in your current location"
+		}
+	}
+}

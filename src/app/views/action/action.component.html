@@ -1,0 +1,69 @@
+<div class="page-wrap height-100 fullscreen-start-background">
+  <div class="session-form-hold" [@animate]="{value:'*',params:{scale:'.9',delay:'300ms'}}">
+    <mat-progress-bar mode="determinate" class="session-progress"></mat-progress-bar>
+    <mat-card class="card-transparent-80">
+      <mat-card-content class="text-center">
+        <div class="text-center pb-1">
+          <img src="assets/img/logo/logo.png" alt="" class="mb-05 full-width">
+        </div>
+
+        <ng-container [ngSwitch]="mode">
+          <ng-container *ngSwitchCase="'verifyEmail'">
+            <ng-container *ngIf="verifySuccess === -1">
+              <h3>{{"FIREBASE.ACTION.VERIFY_EMAIL.TITLE" | translate}}</h3>
+            </ng-container>
+
+            <ng-container *ngIf="verifySuccess === 1">
+              <h3>{{"FIREBASE.ACTION.VERIFY_EMAIL.SUCCESS" | translate}}</h3>
+            </ng-container>
+
+            <ng-container *ngIf="verifySuccess === 0">
+              <h3>{{"FIREBASE.ACTION.VERIFY_EMAIL.ERROR" | translate}}</h3>
+            </ng-container>
+
+          </ng-container>
+
+          <ng-container *ngSwitchCase="'recoverEmail'">
+            <ng-container *ngIf="verifySuccess === -1">
+              <h3>{{"FIREBASE.ACTION.RECOVER_EMAIL.TITLE" | translate}}</h3>
+            </ng-container>
+
+            <ng-container *ngIf="verifySuccess === 1">
+              <h3>{{"FIREBASE.ACTION.RECOVER_EMAIL.SUCCESS" | translate}}</h3>
+            </ng-container>
+
+            <ng-container *ngIf="verifySuccess === 0">
+              <h3>{{"FIREBASE.ACTION.RECOVER_EMAIL.ERROR" | translate}}</h3>
+            </ng-container>
+
+          </ng-container>
+          <ng-container *ngSwitchCase="'resetPassword'">
+            <h3 *ngIf="verifySuccess !== 1">{{"FIREBASE.ACTION.RESET_PASSWORD.TITLE" | translate}}</h3>
+
+            <form (ngSubmit)="resetPassword()" *ngIf="verifySuccess !== 1">
+              <mat-form-field class="full-width field-icon">
+                <mat-icon matPrefix>lock</mat-icon>
+                <input type="password" name="password" matInput [placeholder]="'LOGIN.PASSWORD.PLACEHOLDER' | translate" value="" [(ngModel)]="newPassword">
+              </mat-form-field>
+              <button #submitButton type="submit" mat-raised-button class="mat-primary full-width mb-1"> {{"FIREBASE.ACTION.RESET_PASSWORD.BUTTON" | translate}}</button>
+              <small *ngIf="verifySuccess === 0" class="form-error-msg">
+                {{"FIREBASE.ACTION.RESET_PASSWORD.ERROR" | translate}}</small>
+            </form>
+
+            <ng-container *ngIf="verifySuccess === 1">
+              <h3>{{"FIREBASE.ACTION.RESET_PASSWORD.SUCCESS" | translate}}</h3>
+            </ng-container>
+
+          </ng-container>
+        </ng-container>
+
+        <button mat-raised-button color="accent" class="full-width mb-1" (click)="goToDashboard()">
+          {{"FIREBASE.ACTION.START" | translate}}
+        </button>
+
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+</div>
+<app-legal-footer></app-legal-footer>

@@ -1,0 +1,56 @@
+<ng-container *ngIf="travelRoute">
+  <ng-container *ngFor="let c of travelRoute.countries">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title class="travel-country-title p-0 m-0">{{c.title}}</mat-card-title>
+      </mat-card-header>
+    </mat-card>
+
+    <div fxLayout="row wrap">
+      <div fxFlex="100" fxFlex.gt-md="50" *ngFor="let i of c.information">
+        <mat-card class="default">
+          <div class="text-center">
+            <!--  <img *ngIf="i.picture?.path" mat-card-image [src]="imageUrl + i.picture.path"> -->
+            <im-img-loader mat-card-image *ngIf="i.picture?.path" [src]="imageUrl + i.picture.path" useImg></im-img-loader>
+          </div>
+          <mat-card-title>{{"ROUTE.INFORMATION."+i.category | translate}}</mat-card-title>
+          <mat-card-content class="p-0">
+
+            <div class="task-description p-1" [innerHTML]="i.description"></div>
+
+            <div class="list-tasktype" *ngIf="i.todo" fxLayout="row wrap">
+              <div class="tasktype-item" fxLayout="row" fxFlex="100" *ngFor="let t of i.todo">
+                <mat-checkbox class="mr-1"></mat-checkbox>
+                <span>{{t.value}}</span>
+                <span fxFlex></span>
+                <mat-chip mat-sm-chip color="primary" [selected]="t.status ? true : false">{{t.status ? 'completed' : 'pending'}}</mat-chip>
+                <button mat-icon-button mat-sm-button [matMenuTriggerFor]="taskMenu" class="tasktype-action ml-1">
+                  <mat-icon class="text-muted">more_vert</mat-icon>
+                </button>
+                <mat-menu #taskMenu="matMenu">
+                  <button mat-menu-item>
+                    <mat-icon>done</mat-icon>
+                    <span>Completed</span>
+                  </button>
+                  <button mat-menu-item>
+                    <mat-icon>edit</mat-icon>
+                    <span>Edit</span>
+                  </button>
+                  <button mat-menu-item>
+                    <mat-icon>delete</mat-icon>
+                    <span>Delete</span>
+                  </button>
+                </mat-menu>
+
+              </div>
+            </div>
+            <!--             <div class="text-center">
+              <button mat-button class="full-width">View all</button>
+            </div> -->
+          </mat-card-content>
+        </mat-card>
+
+      </div>
+    </div>
+  </ng-container>
+</ng-container>

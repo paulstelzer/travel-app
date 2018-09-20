@@ -1,0 +1,23 @@
+/*------- travel ------*/
+.travel-sidebar {
+    box-sizing: border-box;
+  }
+  .travel-sidebar .propic {
+    width: 100%;
+    margin-bottom: 6px;
+  }
+  .travel-sidebar .propic img {
+    width: 50%;
+    height: auto;
+    border-radius: 50%;
+  }
+  .travel-sidebar .travel-title .main-title {
+    font-size: 1.5rem;
+  }
+  .travel-sidebar .travel-nav {
+    margin-left: -24px;
+    margin-right: -24px;
+  }
+  .travel-sidebar .travel-nav .mat-list-item .mat-icon {
+    margin-right: 8px;
+  }

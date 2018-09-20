@@ -1,0 +1,63 @@
+<div fxLayout="row wrap">
+    <div fxFlex="100" fxFlex.sm="50" fxFlex.md="40" fxFlex.gt-md="300px">
+        <mat-card class="travel-sidebar mb-1 pb-0" *ngIf="travelRoute">
+            <div class="text-center">
+                <!-- <img *ngIf="travelRoute.picture?.path" mat-card-image [src]="imageUrl + travelRoute.picture.path"> -->
+                <im-img-loader mat-card-image  *ngIf="travelRoute.picture?.path" [src]="imageUrl + travelRoute.picture.path" useImg></im-img-loader>
+            </div>
+            <div class="travel-title text-center mb-1">
+                <div class="main-title">
+                    {{travelRoute.title}}
+                </div>
+                <div class="text-muted">{{travelRoute.description}}</div>
+            </div>
+            <div class="travel-actions text-center mb-1">
+                <button mat-raised-button color="primary">BUTTON_1</button>
+                <button mat-raised-button color="accent">BUTTON_2</button>
+            </div>
+            <div class="travel-nav">
+                <mat-nav-list>
+                    <mat-list-item [routerLink]="'/routes/'+travelRoute.id+'/overview'" routerLinkActive="list-item-active">
+                        <mat-icon>home</mat-icon>
+                        {{"ROUTE.TABS.OVERVIEW"| translate}}
+                    </mat-list-item>
+                    <mat-divider></mat-divider>
+                    <mat-list-item [routerLink]="'/routes/'+travelRoute.id+'/travel'" routerLinkActive="list-item-active">
+                        <mat-icon>map</mat-icon>
+                        {{"ROUTE.TABS.ROUTES"| translate}}
+                    </mat-list-item>
+                    <mat-divider></mat-divider>
+                    <mat-list-item [routerLink]="'/routes/'+travelRoute.id+'/info'" routerLinkActive="list-item-active">
+                        <mat-icon>info</mat-icon>
+                        {{"ROUTE.TABS.INFO"| translate}}
+                    </mat-list-item>
+                    <mat-divider></mat-divider>
+                    <!-- <mat-list-item  [routerLink]="'/routes/'+id+'/other'" routerLinkActive="list-item-active">
+                            <mat-icon>content_paste</mat-icon>
+                            Other
+                        </mat-list-item> -->
+                </mat-nav-list>
+            </div>
+        </mat-card>
+
+        <!-- Contact Information -->
+        <!--             <mat-card class="default">
+                <mat-card-title>Travel Information</mat-card-title>
+                <mat-card-content class="pt-0">
+                    <mat-list>
+                        <mat-list-item>
+                            <mat-icon class="mr-1">public</mat-icon> 2 weeks</mat-list-item>
+                        <mat-list-item>
+                            <mat-icon class="mr-1">email</mat-icon> abc</mat-list-item>
+                        <mat-list-item>
+                            <mat-icon class="mr-1">add_location</mat-icon> Ssaf</mat-list-item>
+                    </mat-list>
+                </mat-card-content>
+            </mat-card> -->
+    </div>
+
+    <!-- travel Views -->
+    <div fxFlex="100" fxFlex.sm="50" fxFlex.md="60" fxFlex.gt-md="calc(100% - 300px)">
+        <router-outlet></router-outlet>
+    </div>
+</div>

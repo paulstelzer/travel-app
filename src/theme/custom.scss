@@ -1,0 +1,17 @@
+.fullscreen-start-background {
+    background: url('/assets/img/background/start.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+.tab-background {
+    background-size: cover;
+    background-position: 50% 50%;
+    height: 100%;
+}
+
+$image-list: 'slider0' 'slider1' 'month' 'slider3';
+@each $image in $image-list {
+    .image-#{$image} {
+        background-image: url('/assets/img/new-route/#{$image}.jpg');
+    }
+}
